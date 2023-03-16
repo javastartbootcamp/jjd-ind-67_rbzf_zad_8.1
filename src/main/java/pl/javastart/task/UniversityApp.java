@@ -1,5 +1,6 @@
 package pl.javastart.task;
 
+
 public class UniversityApp {
 
     /**
@@ -13,7 +14,10 @@ public class UniversityApp {
      * @param lastName  - nazwisko prowadzącego
      */
     public void createLecturer(int id, String degree, String firstName, String lastName) {
-
+        if (!Lecturer.idIsUnique(id))
+            System.out.println("Prowadzący z id " + id + " już istnieje");
+        else
+            new Lecturer(id, degree, firstName, lastName);
     }
 
     /**
@@ -28,7 +32,15 @@ public class UniversityApp {
      * @param lecturerId - identyfikator prowadzącego. Musi zostać wcześniej utworzony za pomocą metody {@link #createLecturer(int, String, String, String)}
      */
     public void createGroup(String code, String name, int lecturerId) {
-
+        if (!Group.codeIsUnique(code)) {
+            System.out.println("Grupa " + code + " już istnieje");
+        } else {
+            if (Lecturer.idIsUnique(lecturerId)) {
+                System.out.println("Prowadzacy o id " + lecturerId + " nie istnieje.");
+            } else {
+        new Group(code, name, lecturerId);
+            }
+        }
     }
 
 
@@ -43,7 +55,11 @@ public class UniversityApp {
      * @param lastName  - nazwisko studenta
      */
     public void addStudentToGroup(int index, String groupCode, String firstName, String lastName) {
-
+        if (!Group.codeExists(groupCode)) {
+            System.out.println("Grupa " + groupCode + " nie istnieje.");
+        } else {
+            Group.addStudentToArray(index, groupCode, firstName, lastName);
+        }
     }
 
 
@@ -119,4 +135,5 @@ public class UniversityApp {
     public void printAllStudents() {
 
     }
+
 }
