@@ -1,22 +1,33 @@
 package pl.javastart.task;
 
-public class Student {
-    private int index;
+public class Lecturer {
+
+    private int id;
+    private String degree;
     private String firstName;
     private String lastName;
 
-    public Student(int index, String firstName, String lastName) {
-        this.index = index;
+    public Lecturer(int id, String degree, String firstName, String lastName) {
+        this.id = id;
+        this.degree = degree;
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-    public int getIndex() {
-        return index;
+    public int getId() {
+        return id;
     }
 
-    public void setIndex(int index) {
-        this.index = index;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getDegree() {
+        return degree;
+    }
+
+    public void setDegree(String degree) {
+        this.degree = degree;
     }
 
     public String getFirstName() {
@@ -34,8 +45,6 @@ public class Student {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-
-    public String getStudentInfo() {
-        return index + " " + firstName + " " + lastName;
-    }
 }
+
+
