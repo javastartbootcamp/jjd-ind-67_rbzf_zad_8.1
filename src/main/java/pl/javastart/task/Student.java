@@ -1,14 +1,11 @@
 package pl.javastart.task;
 
-public class Student {
+public class Student extends Person {
     private int index;
-    private String firstName;
-    private String lastName;
 
-    public Student(int index, String firstName, String lastName) {
+    public Student(String firstName, String lastName, int index) {
+        super(firstName, lastName);
         this.index = index;
-        this.firstName = firstName;
-        this.lastName = lastName;
     }
 
     public int getIndex() {
@@ -19,23 +16,8 @@ public class Student {
         this.index = index;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getStudentInfo() {
-        return index + " " + firstName + " " + lastName;
+    @Override
+    public String getInfo() {
+        return index + " " + super.getInfo();
     }
 }

@@ -50,7 +50,8 @@ public class Group {
         return studentsCounter;
     }
 
-    public void setStudentsCounter(int studentsCounter) {
-        this.studentsCounter = studentsCounter;
+    public void addStudent(Student student) {
+        students[studentsCounter] = student;
+        studentsCounter++;
     }
 }

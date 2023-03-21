@@ -1,17 +1,14 @@
 package pl.javastart.task;
 
-public class Lecturer {
+public class Lecturer extends Person {
 
     private int id;
     private String degree;
-    private String firstName;
-    private String lastName;
 
-    public Lecturer(int id, String degree, String firstName, String lastName) {
+    public Lecturer(String firstName, String lastName, int id, String degree) {
+        super(firstName, lastName);
         this.id = id;
         this.degree = degree;
-        this.firstName = firstName;
-        this.lastName = lastName;
     }
 
     public int getId() {
@@ -30,20 +27,9 @@ public class Lecturer {
         this.degree = degree;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    @Override
+    public String getInfo() {
+        return degree + " " + super.getInfo();
     }
 }
 
