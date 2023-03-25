@@ -26,6 +26,6 @@ public class Main {
         universityApp.printGroupInfo("pp-2022");
         universityApp.printGroupInfo("po-2022");
         universityApp.printGradesForStudent(179129);
-        universityApp.printGradesForGroup("po-2022");
+        universityApp.printGradesForGroup("pp-2022");
     }
 }

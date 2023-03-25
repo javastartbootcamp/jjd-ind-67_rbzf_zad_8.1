@@ -54,4 +54,27 @@ public class Group {
         students[studentsCounter] = student;
         studentsCounter++;
     }
+
+    public void printStudents() {
+        for (int i = 0; i < studentsCounter; i++) {
+            System.out.println(students[i].getInfo());
+        }
+    }
+
+    public void printInfo() {
+        System.out.println("Kod: " + code);
+        System.out.println("Nazwa: " + name);
+        System.out.println("Prowadzący: " + lecturer.getInfo());
+        System.out.println("Uczestnicy:");
+        printStudents();
+    }
+
+    public boolean hasStudentWithIndex(int studentIndex) {
+        for (int i = 0; i < studentsCounter; i++) {
+            if (students[i].getIndex() == studentIndex) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

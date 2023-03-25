@@ -1,11 +1,11 @@
 package pl.javastart.task;
 
-public class Grade {
+public class GradeComplete {
     private double grade;
     private Student student;
     private Group group;
 
-    public Grade(double grade, Student student, Group group) {
+    public GradeComplete(double grade, Student student, Group group) {
         this.grade = grade;
         this.student = student;
         this.group = group;
@@ -34,4 +34,7 @@ public class Grade {
     public void setGroup(Group group) {
         this.group = group;
     }
+
 }
+
+
